@@ -2,7 +2,6 @@ import { cn } from '@/lib/utils';
 import React, { forwardRef } from 'react';
 
 type SectionContainerProps = {
-  title?: string;
   padded?: boolean;
   minHScreen?: boolean;
 };
@@ -10,7 +9,7 @@ type SectionContainerProps = {
 const SectionContainer = forwardRef<
   HTMLElement,
   React.HTMLAttributes<HTMLElement> & SectionContainerProps
->(({ className, children, title, padded, minHScreen }) => {
+>(({ className, children, padded, minHScreen }) => {
   return (
     <section
       className={cn(
@@ -20,11 +19,6 @@ const SectionContainer = forwardRef<
         className
       )}
     >
-      {title && (
-        <h1 className="scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl">
-          {title}
-        </h1>
-      )}
       {children}
     </section>
   );

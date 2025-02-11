@@ -84,8 +84,8 @@ export const AppSidebar = () => {
                   <CollapsibleContent>
                     {item.menus.map((menu, i) => {
                       return (
-                        <SidebarMenuSub>
-                          <SidebarMenuSubItem key={i}>
+                        <SidebarMenuSub key={i}>
+                          <SidebarMenuSubItem>
                             <SidebarMenuSubButton asChild>
                               <a href={menu.href}>
                                 <menu.icon />
