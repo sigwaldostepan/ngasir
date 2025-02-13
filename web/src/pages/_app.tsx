@@ -1,4 +1,5 @@
 import AppLayout from '@/components/layouts/AppLayout';
+import { Toaster } from '@/components/ui/Sonner';
 import '@/styles/globals.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
@@ -30,6 +31,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <AppLayout>
           <Component {...pageProps} />
         </AppLayout>
+        <Toaster position="top-center" />
       </QueryClientProvider>
     </div>
   );
