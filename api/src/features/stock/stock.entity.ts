@@ -23,7 +23,7 @@ export class Stock {
   @UpdateDateColumn()
   updatedAt: string;
 
-  @OneToOne(() => Product, (product) => product.stock)
+  @OneToOne(() => Product, (product) => product.stock, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'product_id' })
   product: Product;
 }

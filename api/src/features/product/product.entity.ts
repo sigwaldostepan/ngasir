@@ -29,13 +29,16 @@ export class Product {
 
   @OneToOne(() => Stock, (stock) => stock.product, {
     eager: true,
-    cascade: true,
+    cascade: ['remove'],
   })
   stock: Stock;
 
   @OneToMany(
     () => TransactionDetail,
     (transactionDetail) => transactionDetail.product,
+    {
+      cascade: ['remove'],
+    },
   )
   transactionDetail: TransactionDetail;
 }
